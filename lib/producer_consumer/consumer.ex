@@ -11,10 +11,14 @@ defmodule ProducerConsumer.Consumer do
     {:ok, nil}
   end
 
+  def handle_info({:publish, topic, message}, state) do
+    IO.puts("*********** Topic: #{topic} ----- Message: #{message}")
+    {:noreply, state}
+  end
+
   def handle_info(data, state) do
-    IO.puts "### RECEIVING INFO"
+    IO.puts "### RECEIVING UNHANDLED INFO"
     IO.inspect(data)
-    IO.puts "####"
     {:noreply, state}
   end
 end

@@ -19,9 +19,6 @@ defmodule ProducerConsumer.Producer do
   end
 
   def handle_info(data, state) do
-    # IO.puts "### RECEIVING INFO"
-    # IO.inspect(data)
-    # IO.puts "####"
     {:noreply, state}
   end
 
